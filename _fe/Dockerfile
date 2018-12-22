@@ -1,4 +1,4 @@
-FROM node:4.6.1
+FROM node:10.4
 ADD package.json /tmp/package.json
 RUN cd /tmp && npm install
 RUN mkdir -p /opt/node_npm_data && mv /tmp/node_modules /opt/node_npm_data/
