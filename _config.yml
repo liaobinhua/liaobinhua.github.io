@@ -1,0 +1,30 @@
+baseurl:        /
+
+markdown:       redcarpet
+redcarpet:
+  # extensions:   ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+  extensions:   ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables"]
+highlighter:       pygments
+paginate:       300
+paginate_path:  "index/page:num"
+permalink:      /posts/:title/
+
+title:          "liaobinhua"
+
+exclude:        ['_fe', 'README.md', 'base.sh', 'manager.sh', '_docker']
+
+gems:           ['jekyll-paginate', 'jekyll-multiple-languages']
+
+host_name:      'www.liaobinhua.net'
+
+author:         liaobinhua1994@gmail.com 廖彬华
+
+# -----------------
+
+# Multiple languages
+languages:          ['en', 'cn']
+
+# If not config, the first of languages will be the default
+language_default:   "en"
+
+# -----------------
