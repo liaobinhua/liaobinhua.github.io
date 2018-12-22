@@ -1,28 +1,61 @@
----
-title : Sitemap
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in site.pages %}
+    
     <url>
-        <loc>http://{{site.host_name}}{{ page.url }}</loc>
-        <lastmod>{{ site.time | date: "%Y-%m-%d"}}</lastmod>
-        {% if $page.url contains 'index.' %}
-        <changefreq>hourly</changefreq>
-        {% else %}
+        <loc>http://www.liaobinhua.net/404/</loc>
+        <lastmod>2018-12-22</lastmod>
+        
         <changefreq>daily</changefreq>
-        {% endif %}
+        
     </url>
-    {% endfor %}
-    {% for post in site.posts %}
+    
     <url>
-        <loc>http://{{site.host_name}}{{ post.url }}</loc>
-        <lastmod>{{ site.time | date: "%Y-%m-%d"}}</lastmod>
-        {% if $post.url contains 'index.' %}
-        <changefreq>hourly</changefreq>
-        {% else %}
+        <loc>http://www.liaobinhua.net/about/about-me/</loc>
+        <lastmod>2018-12-22</lastmod>
+        
         <changefreq>daily</changefreq>
-        {% endif %}
+        
     </url>
-    {% endfor %}
+    
+    <url>
+        <loc>http://www.liaobinhua.net/about/feed/</loc>
+        <lastmod>2018-12-22</lastmod>
+        
+        <changefreq>daily</changefreq>
+        
+    </url>
+    
+    <url>
+        <loc>http://www.liaobinhua.net/cn/</loc>
+        <lastmod>2018-12-22</lastmod>
+        
+        <changefreq>daily</changefreq>
+        
+    </url>
+    
+    <url>
+        <loc>http://www.liaobinhua.net/</loc>
+        <lastmod>2018-12-22</lastmod>
+        
+        <changefreq>daily</changefreq>
+        
+    </url>
+    
+    <url>
+        <loc>http://www.liaobinhua.net/sitemap.xml</loc>
+        <lastmod>2018-12-22</lastmod>
+        
+        <changefreq>daily</changefreq>
+        
+    </url>
+    
+    
+    <url>
+        <loc>http://www.liaobinhua.net/cn/posts/docker-first/</loc>
+        <lastmod>2018-12-22</lastmod>
+        
+        <changefreq>daily</changefreq>
+        
+    </url>
+    
 </urlset> 
