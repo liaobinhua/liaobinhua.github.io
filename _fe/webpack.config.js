@@ -2,7 +2,8 @@ var path = require('path');
 
 var module_path = path.resolve(__dirname, 'node_modules');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var root_dir = path.dirname(__dirname);
 var Cube = require('cube-js');
 var SrainBlogPlugin = require('./src/srain-blog-plugin.js');
@@ -23,8 +24,19 @@ module.exports = {
     publicPath: '/assets/app',
     filename: "js/[name].js",
   },
+  optimization:{
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "base",
+          chunks: "all"
+        }
+      }
+    }
+  },
   module: {
-    loaders: [
+    rules: [
     {
       test: /\.js$/,
       exclude: module_path,
@@ -63,17 +75,27 @@ module.exports = {
     // Extract css files
     {
       test: /\.(css|less|scss)$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!less-loader?sourceMap!sass-loader?sourceMap")
+      //loader: ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!less-loader?sourceMap!sass-loader?sourceMap")
+      loader: [
+        "css-loader?sourceMap!less-loader?sourceMap!sass-loader?sourceMap",
+        {
+          loader: MiniCssExtractPlugin.loader,
+        },
+        "style-loader"
+        //MiniCssExtractPlugin.loader("style-loader", "css-loader?sourceMap!less-loader?sourceMap!sass-loader?sourceMap")
+      ]
     },
     ]
   },
   plugins: [
-    new ExtractTextPlugin("css/app.css", { allChunks: true }),
+    //new ExtractTextPlugin("css/app.css", { allChunks: true }),
+    new MiniCssExtractPlugin({filename: "css/app.css", chunkFilename: 'css/[id][chunkhash:8].css',}),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
     }),
-    new webpack.optimize.CommonsChunkPlugin('base', 'js/base.js'),
+    //new webpack.optimize.CommonsChunkPlugin('base', 'js/base.js'),
+    //new webpack.optimization.splitChunks('base', 'js/base.js'),
     new SrainBlogPlugin(),
-  ]
+  ],
 };

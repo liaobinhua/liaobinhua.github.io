@@ -5,3 +5,5 @@ node_modules
 _fe/node_modules
 *.map
 npm-debug.log
+
+_fe/v8-compile-cache-0/
