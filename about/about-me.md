@@ -10,18 +10,17 @@ category: about
 * [GitHub](https://github.com/liaobinhua) 
 
     Most of my projects are hosted on GitHub.
+* [StackOverflow]() 
 
-##* [StackOverflow]() 
+* [Twitter]()
 
-##* [Twitter]()
-
-##* [Facebook]()
+* [Facebook]()
 
 * [新浪微博](http://weibo.com/liaobinhua1994/)
 
     欢迎关注我新浪微博！
 
-##* [Email]()
+* [Email]("liaobinhua1994@gmail.com")
 
 
 ### Videos
@@ -37,6 +36,7 @@ category: about
 
 <div class='wechat-mp-qrcode'>
     WeChat Subscriptions / 微信公众号<br/>
+
     Only Chinese content available :(. 
 </div>
 
