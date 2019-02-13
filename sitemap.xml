@@ -7,7 +7,7 @@ title : Sitemap
     <url>
         <loc>http://{{site.host_name}}{{ page.url }}</loc>
         <lastmod>{{ site.time | date: "%Y-%m-%d"}}</lastmod>
-        {% if $page.url contains 'index.' %}
+        {% if page.url contains 'index.' %}
         <changefreq>hourly</changefreq>
         {% else %}
         <changefreq>daily</changefreq>
@@ -18,7 +18,7 @@ title : Sitemap
     <url>
         <loc>http://{{site.host_name}}{{ post.url }}</loc>
         <lastmod>{{ site.time | date: "%Y-%m-%d"}}</lastmod>
-        {% if $post.url contains 'index.' %}
+        {% if post.url contains 'index.' %}
         <changefreq>hourly</changefreq>
         {% else %}
         <changefreq>daily</changefreq>

@@ -13,7 +13,7 @@ title:          "liaobinhua"
 
 exclude:        ['_fe', 'README.md', 'base.sh', 'manager.sh', '_docker']
 
-gems:           ['jekyll-paginate', 'jekyll-multiple-languages']
+plugins:           ['jekyll-paginate', 'jekyll-multiple-languages']
 
 host_name:      'www.liaobinhua.net'
 
